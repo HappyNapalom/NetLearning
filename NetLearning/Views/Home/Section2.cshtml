@@ -1,0 +1,212 @@
+﻿
+
+@{
+    ViewBag.Title = "Building Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron2">
+    <div class="body-section3">
+        <h3>II. Bringing things together: Building forms</h3>
+
+        <p>
+            Now that you know the main tags we use to develop a form, let's put it all together!
+            In this section, we'll be looking at some examples of forms with extra bits and pieces.
+            After completing this unit, you'll be able to:
+            <ul>
+                <li>apply values to form elements</li>
+                <li>use break lines to improve the way your form looks</li>
+                <li>use placeholders to facilitate user input</li>
+            </ul>
+            You'll be given the chance to develop another form with some exta features!
+        </p>
+        <p><strong>Look at this simple form:</strong></p>
+        <h4>Registration Form</h4>
+        <form action="#">
+            First name:<br>
+            <input type="text" name="firstname" value="">
+            <br>
+            Last name:<br>
+            <input type="text" name="lastname" value="">
+            <br>
+            Address:<br>
+            <input type="text" name="address" value="">
+            <br>
+            Phone number:<br>
+            <input type="number" name="phonenumber" value="">
+            <br>
+            Gender:<br>
+            <input type="radio" name="gender" value="male" checked> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="radio" name="gender" value="other"> Other
+            <br><br>
+            <input type="submit" value="Submit">
+        </form><br /><br>
+        <p>
+            When developing web sites, we learn how to see what is behind all the content displayed to us
+            when looking at a web page. Try doing the same with this form.
+        </p>
+        <h3>What tags do you think were used in the development of this form?</h3>
+        <a href="#tags" class="btn btn-info" data-toggle="collapse">Click here and find out the answer!</a>
+        <div id="tags" class="collapse">
+            <br />
+            <p>We used a few different tags and content.</p>
+            <p>
+                Everything inside this form, such as First Name, Last Name, Address, and so on, were input
+                within the 'form' tag.
+            </p>
+            <p>The fields we have here are just different input types, such as text, radio, and submit!</p>
+            <p>
+                Don't worry if you didn't spot the right tags in the beginning, keep going and we'll see more
+                details on how we built this form.
+            </p>
+        </div>
+        <h3>Click on the button below and check out all the tags and conent we used in this form.</h3>
+        <a href="#code" class="btn btn-primary" data-toggle="collapse">Form Coding and Structure</a>
+        <div id="code" class="collapse">
+            <xmp>
+                <h4>Registration Form</h4>
+                <form>
+                    First name:<br>
+                    <input type="text" name="firstname" value="">
+                    <br>
+                    Last name:<br>
+                    <input type="text" name="lastname" value="">
+                    <br>
+                    Address:<br>
+                    <input type="text" name="address" value="">
+                    <br>
+                    Phone number:<br>
+                    <input type="number" name="phonenumber" value="">
+                    <br>
+                    Gender:<br>
+                    <input type="radio" name="gender" value="male" checked> Male<br>
+                    <input type="radio" name="gender" value="female"> Female<br>
+                    <input type="radio" name="gender" value="other"> Other
+                    <br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </xmp>
+        </div>
+        <br>
+        <h3>Some of the code may be new to you. Check out what why we structured our form this way!</h3>
+        <br />
+        <p><strong>Formatting attributes and breaking lines</strong></p>
+        <p>
+            When you want to give a name to an attribute to sit outside of the input field, simply type what it is called
+            without using any tags. That's what we did for First Name, Last Name, Address, and so on.
+        </p>
+        <p>
+            The 'br' tags were used a lot! These were placed there just to give your form a better look.
+            'br' breaks the value we have to the next line. For example, for First Name, we didn't want to place the input
+            field in the same line, so we added 'br' to break our content to the next line. We also use it to provides us with
+            space between one line and another.
+        </p>
+        <p>
+            If we didn't use a break line, the first attribute 'First Name' would be displayed like this:
+            <form>
+                First name:
+                <input type="text" name="firstname" value="">
+                <br>
+            </form>
+            <br />
+            So using breaks or not is up to you! =)
+        </p>
+        <br>
+        <p><strong>Input types and names</strong></p>
+        <p>
+            As mentioned in the first part of this course, input types are used to define what kind of input we expect the user
+            to enter. Do we expect a number? Set it to number type.
+            Do we expect an email address? Set it to email type. Do we expect a selection, such as 'Gender'? Then use the radio type.
+            Input types will not only classify an attribute, but will also help you when validating a form, that is, making the user supply
+            the right type of input to be processed!
+        </p>
+        <p>
+            Names are also given to our attributes, these will be important when you are to submit the information in the form to another link or database.
+            If you ever want to work on form validation using Javascript, you'll understand why naming a field is important. Maybe, you won't do any validation, but make sure
+            you always name your attributes in a form. Give them a meaningful name, and don't use spaces, just be simple and concise, as we did here.
+        </p>
+        <p><strong>Values</strong></p>
+        <p>
+            You see that values are empty for most of our attributes, but not for gender and submit? Why?
+            If we want to set a value to the  'Last name' field, for instance, we could do so, check it out:
+            <form>
+                Last name:
+                <input type="text" name="lastname" value="Langham">
+                <br>
+            </form>
+            <br />
+            Here we simply decided to set a value to 'Last name' as "Langham". Using pre-fixed values can be hepful in some cases, but make sure you analyse
+            the real need before using them.
+        </p>
+        <p><strong>Placeholders</strong></p>
+        <p>
+            Placeholders were not used in the example we have here, but you can always use them in your forms to help your user quickly identify what type
+            of input is expected. Check this example out:
+            <form>
+                Address:
+                <input type="text" name="address" placeholder="11 Calton Rd">
+                <br>
+            </form>
+            <br />
+            Placeholders, as the name says, just hold a standard value that will disappear once the user inputs something else.
+            The syntax is super simple:
+            <xmp>
+                <form>
+                    Address:
+                    <input type="text" name="address" placeholder="write your placeholder here">
+                    <br>
+                </form>
+            </xmp>
+        </p>
+        <h3>Time to practice!</h3>
+        <p><strong>Now that you know how forms are structured, it's time to develop your own.</strong></p>
+        <p>Look at the following form:</p>
+        <h4>Application Form</h4>
+        <form>
+            First name:<br>
+            <input type="text" name="firstname" placeholder="John">
+            <br>
+            Last name:<br>
+            <input type="text" name="lastname" placeholder="Grand">
+            <br>
+            Email:<br>
+            <input type="email" name="email" placeholder="john@web.co.nz">
+            <br>
+            Phone number:<br>
+            <input type="tel" name="phonenumber">
+            <br>
+            Gender:<br>
+            <input type="radio" name="gender" value="male" checked> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+            City:<br>
+            <select name="city">
+                <option></option>
+                <option value="auckland">Auckland</option>
+                <option value="hamilton">Hamilton</option>
+                <option value="cambridge">Cambridge</option>
+                <option value="Ohaupo">Ohaupo</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Apply">
+        </form>
+        <br />
+        <p><strong>As said in the beginning, try to see what's behind this form so that you can turn that into coding.</strong></p>
+        <p>
+            Pay attention to the extra bits we've added in this form. Make sure you use proper input types,
+            placeholders, values, and naming.
+            Once you think you're ready, jump to <a href="https://codepen.io/pen/">Code Pen</a> and watch your form being built live while coding.
+        </p>
+        <br>
+        <p>Have you finished? Write or copy/paste your code in the space below then submit it to us for grading.</p>
+
+        <p><strong>Happy Coding!</strong></p>
+        <form method="post">
+            <textarea cols="150" rows="10" name="answer">Write your code here... </textarea>
+            </br>
+            <p><input type="submit" name="buttonSubmit" value="Send my code!" /></p>
+        </form>
+    </div>
+</div>
+
+

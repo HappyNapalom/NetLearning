@@ -1,0 +1,74 @@
+﻿@model NetLearning.Models.TeacherModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TeacherModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Section1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Section1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.grade1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grade1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Section2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Section2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.grade2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grade2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Section3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Section3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.grade3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grade3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.overall)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.overall)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

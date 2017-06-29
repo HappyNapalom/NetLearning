@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "Validation & Post Method";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron2">
+    <div class="body-section3">
+        <h3>III. Validation & Post Method</h3>
+        <p>
+            Well done! If you've reached this part of the course, it means you've learnt how to write forms successfully!
+            After completing this unit, you'll be able to:
+            <ul>
+                <li>identify the use of the key word <strong>required</strong> for form validation</li>
+                <li>further apply specific input naming to support validation</li>
+                <li>compare the difference between GET and POST method when sending data to a destination</li>
+            </ul>
+            You'll be given the chance to apply what you have learnt here to another form which requires validation, action, and a method.
+        </p>
+
+        <h3>What is validation?</h3>
+        <p>
+            Validation is what will verify if the mandatory fields in your forms have been properly filled in by the person submitting it.
+            If the mandatory fields are not filled in, then the form won't be submitted. Instead, an error message will be show,
+            so that the user provides the necessary data.
+            Validation is really important, as there are fields which must be filled, otherwise, the content sent to a database can
+            be totally out of place. For instance, if your form is a contact form, then at least a valid email address has to be entered,
+            otherwise, you'll never be able to get back to the sender if they forgot to provide it before submitting.
+            HTML5 Forms Validation will make sure such data is provided before sending it.
+        </p>
+        <h4>Look at the form you were given as a practice test for the first part of this course:</h4>
+        <p>
+            Now, try hitting the "Submit" button without filling one or any of the fields.
+        </p>
+        <h4>Contact Form</h4>
+        <form action="#">
+            Full name:<br>
+            <input type="text" name="firstname" required>
+            <br>
+            Email:<br>
+            <input type="email" name="email" required>
+            <br>
+            Message:<br>
+            <textarea cols="50" rows="10" name="answer" required></textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form><br>
+
+        <p>
+            <strong>
+                See what you get: an error message will appear until you enter something valid for that field or for
+                all fields! This happens because of validation.
+            </strong>
+        </p>
+        <p>
+            Look at the code we used for this form. See what's new:
+        </p>
+        <xmp>
+            <form>
+                Full name:<br>
+                <input type="text" name="firstname" required>
+                <br>
+                Email:<br>
+                <input type="email" name="email" required>
+                <br>
+                Message:<br>
+                <textarea cols="50" rows="10" name="answer" required></textarea>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </xmp>
+        <p>
+            This powerful word called <strong>required</strong> is what makes a field mandatory in our forms!
+            Using the <strong>required</strong> key word is quite helpful to some parts of your form, or maybe, for all of them,
+            however, this is not mandatory. Use it for what you consider really necessary to be processed or sent, to which the user
+            can never leave behind or forget.
+        </p>
+        <p>
+            The input type also helps validating what the user entered. In the email field, for instance, we used type="email",
+            and this was further verified during the validation. That is, even if the user types abc to get rid of the error
+            message when submitting, they will still have to type an acceptable email address. This happens because the email type
+            excepts to get specific inputs from the user, such as dots, at, and so on. Defining the field email as required and setting
+            its type to email will make sure a proper email address is provided! We could do the same for phone number: setting the input type to tel or number, will
+            not let the user send letters or words.
+        </p>
+        <h3>Where to send the content of a form?</h3>
+        <p>
+            Suppose a form is fully coded, now here is the question: where will the information be sent to once the user hits the submit
+            button? Look at what we added to the example below:
+        </p>
+        <p>
+            <xmp>
+                <form action="database.php" method="post">
+                    Full name:<br>
+                    <input type="text" name="firstname" required>
+                    <br>
+                    Email:<br>
+                    <input type="email" name="email" required>
+                    <br>
+                    Message:<br>
+                    <textarea cols="50" rows="10" name="answer" required></textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+            </xmp>
+        </p>
+        <p>
+            What's changed here is the top part of our form within the form tag. We've added an action, and a method.
+            But what are these for?
+            The action describes where the form data, once filled in by the user, will be sent to. In this case, the database.php
+            would be the place where our form once filled in would be processed (or registered in a database server). However, since
+            we don't have a database server here, this action is just here to illustrate the case.
+        </p>
+        <br>
+        <p>
+            When it comes to method, we've got two types: GET or POST.
+            The GET method is used to request data from a specified resource (for instance: a database table),
+            whereas the POST method is used to submit data to be processed to a specified resource.
+            Since we're working on the principle of sending data somewhere, let's stick to the POST mothod.
+        </p>
+        <h3>Time to practice!</h3>
+        <p><strong>Finally, time to wrap it all together!</strong></p>
+        <p>Look at the following form:</p>
+        <h4>Application for Language Course</h4>
+        <form action="#" method="post">
+            First name:<br>
+            <input type="text" name="firstname" placeholder="Mark" required>
+            <br>
+            Last name:<br>
+            <input type="text" name="lastname" placeholder="Jackson" required>
+            <br>
+            Email:<br>
+            <input type="email" name="email" placeholder="john@web.co.nz" required>
+            <br>
+            Phone Number:<br>
+            <input type="tel" name="phonenumber" required>
+            <br>
+            Address:<br>
+            <input type="text" name="address" placeholder="118 Naylon St" required><br>
+            City:<br>
+            <select name="city" required>
+                <option></option>
+                <option value="wellington">Wellington</option>
+                <option value="paraparaumu">Paraparaumu</option>
+                <option value="levin">Levin</option>
+                <option value="lowerhutt">Lower Hutt</option>
+                <option value="upperhutt">Upper Hutt</option>
+            </select><br>
+            Postal Code:<br>
+            <input type="number" name="postcode" required><br>
+            Language Course:<br>
+            <select name="course" required>
+                <option></option>
+                <option value="maori">Maori</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="chinese">Chinese</option>
+                <option value="french">French</option>
+            </select><br>
+            Special Requests:<br>
+            <textarea name="message" rows="5" cols="40">Type special requests here...</textarea>
+            <br>
+            <input type="submit" value="Send">
+        </form>
+        <br />
+        <p><strong>Attention to the following guidelines:</strong></p>
+        <p>>> First Name, Last Name, Email, Phone Number, Address, City, Postal Code, and Language Course are all mandatory (required) fields.</p>
+        <p>>> Make sure your validation is supported by proper input types.</p>
+        <p>>> Once filled in, this form is to be submitted via a post method to a supposed action at apply.php.</p>
+        <p>>> Once you think you're ready, jump to <a href="https://codepen.io/pen/">Code Pen</a> and watch your form being built live while coding.</p>
+        <br>
+        <p>Have you finished? Write or copy/paste your code in the space below then submit it to us for grading.</p>
+        <p><strong>Happy Coding!</strong></p>
+        <form method="post">
+            <textarea cols="150" rows="10" name="answer">Write your code here... </textarea>
+            </br>
+            <p><input type="submit" name="buttonSubmit" value="Send my code!" /></p>
+        </form>
+    </div>
+</div>
+
+

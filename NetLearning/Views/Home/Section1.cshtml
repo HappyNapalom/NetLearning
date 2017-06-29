@@ -1,0 +1,211 @@
+﻿@model NetLearning.Models.UserGrade
+@{
+    ViewBag.Title = "Form Structure";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron2">
+    <div class="body-section3">
+        <h3>I. Introduction to Forms: Structure & Elements</h3>
+        <p>
+            This first part of the course will bring you the basics about the elements involved in creating forms.
+            By the end of this unit you'll be able to describe the use of different input types and elements, such as SELECT, TEXTAREA, TEXT input, and RADIO.
+            You'll also be given your very first task which is building a simple form.
+            Let's take a step at a time in order to understand HTML5 forms content and implementation.
+        </p>
+        <h3>What are HTML forms?</h3>
+        <p>
+            HTML Forms are one of the main points of two-way communication between a user and a web site or application.
+            They allow users to send data to the web site.
+        </p>
+
+        <h3>What are forms made up of?</h3>
+        <p>
+            Forms are made up of a mix of elements (also known as tags), usually identified by angle brackets <> and input types.
+            Whenever we want to use an element, we have to open angle brackets then we close it by using another angle bracket with a forward
+            slash in between them, as you can see here:
+            <xmp>
+                <element_name></element_name>
+            </xmp>
+        </p>
+        <p>
+            Input types, however, don't require a closing tag because everything is defined within a main tag, as you'll see later on.
+            Tags and input tyepes are applied according to what type of field we have in our form. Let's learn more about the main elements of a form.
+        </p>
+        <h4>SELECT element</h4>
+        <p>
+            This elements provides you with a drop-down list, such as this one, which lists a few different countries:
+            <select name="countries">
+                <option></option>
+                <option value="newzealand">New Zealand</option>
+                <option value="australia">Australia</option>
+                <option value="fiji">Fiji</option>
+                <option value="samoa">Samoa</option>
+            </select>
+        </p>
+        <p>Look at the code we used within this SELECT element:</p>
+        <p>
+            <xmp>
+                <select name="countries">
+                    <option></option>
+                    <option value="newzealand">New Zealand</option>
+                    <option value="australia">Australia</option>
+                    <option value="fiji">Fiji</option>
+                    <option value="samoa">Samoa</option>
+                </select>
+            </xmp>
+        </p>
+        <p>
+            The tag we used here is called SELECT, but it also needs another tag called OPTION, which holds the options within the list.
+            We usually identifiy our type of select by giving it a meaningful name, in this case, "countries", because that is what
+            we are displaying. You can call your select element whatever name you like.
+            Within the option tag we set a value for it, as this is what defines the input type. Then outside the opening option tag, we write what the user will see,
+            by using proper spacing and capitalization.
+            The first option tag above is empty; that is because it will not show anything pre selected there. However, this is optional.
+            Observe that we have the select tag and within it we have multiple options. Remember that whenever you open a tag, you have to close it accordingly.
+            If you have multiple elements with a single tag, remember that it has to be closed after all the other elements within have been closed.
+        </p>
+
+        <h4>TEXTAREA element</h4>
+        <p>
+            This element provides you with an input field with multiple lines, ideally used when sending messages or for the input
+            of lots of words/data.
+            <textarea name="message" rows="5" cols="40">Write your message here...</textarea>
+        </p>
+        <p>Look at the code we used within this TEXTAREA element:</p>
+        <p>
+            <xmp>
+                <textarea name="message" rows="5" cols="40">Write your message here...</textarea>
+            </xmp>
+        </p>
+        <p>
+            The tag we used here is called TEXTAREA, similarly to the SELECT element above, we've also named it accordingly.
+            This element has got a few different features. We have used rows to identify how many lines we want to make avaible
+            within this field, and cols which refer to how many columns there will be. You can set these to the size you want by placing
+            a number within double quotes.
+            We've also added a small text inside the text area: "Write your message here..." You can leave that empty if you like, or change
+            it to something meaningful to your field.
+        </p>
+
+        <h4>TEXT input</h4>
+        <p>
+            A text input is probably one of the most common input types used in HTML5 forms. They are required when we want to get
+            general text data from a user and they come with a pre-defined size.<br>
+            Full name: &nbsp<input type="text" name="fullname">
+            <br>
+        </p>
+        <p>Look at the code we used within this TEXT input:</p>
+        <p>
+            <xmp>
+                Full name:<input type="text" name="fullname">
+            </xmp>
+        </p>
+        <p>
+            In this field we wish to get the user's full name. Therefore, we added an input type "text".
+            If we were to get the user's phone number, then we'd set the type as "tel" or "number".
+            If we were to get the user's email address, then we'd set the type to "email".
+            "number", "text", "email", "password", and "date" are the most common input types.
+            However, there a number of other types within HTML5 forms.
+            Use them to identify the type of data you wish to get from the user. If you have an input type
+            date, then you won't be able to type text. This will certainly help you in the next steps of building forms.
+        </p>
+
+        <h4>RADIO input</h4>
+        <p>
+            Radio is actually a button which gives the user the chance to select only one option. It's got similar
+            use to the select element.<br>
+            Where are you from? &nbsp
+            <input type="radio" name="country" value="newzealand"> New Zealand
+            <input type="radio" name="country" value="austalia"> Australia
+            <input type="radio" name="country" value="fiji"> Fiji
+            <input type="radio" name="country" value="samoa"> Samoa
+            <br>
+        </p>
+        <p>Look at the code we used within RADIO input:</p>
+        <p>
+            <xmp>
+                Where are you from?
+                <input type="radio" name="country" value="newzealand"> New Zealand
+                <input type="radio" name="country" value="austalia"> Australia
+                <input type="radio" name="country" value="fiji"> Fiji
+                <input type="radio" name="country" value="samoa"> Samoa
+            </xmp>
+        </p>
+        <p>
+            The RADIO type is what turns this input into a selection button.
+            We've named it "country", because that is what it lists. Values were also added accordingly.
+        </p>
+
+        <h4>SUBMIT input</h4>
+        <p>
+            After someone inputs data in a form, we need a button which will submit that information somewhere.
+            <input type="submit" value="Submit">
+        </p>
+        <p>Look at the code we used within this SUBMIT button:</p>
+        <p>
+            <xmp>
+                <input type="submit" value="Submit">
+            </xmp>
+        </p>
+        <p>
+            This button is actually an input type called "submit".
+            We've also called it "Submit", but we could've called it "Send", "Process", "Enrol", "Pay", or whatever
+            other name you want. Preferably, name it according to the conext of your form.
+        </p>
+
+        <h4>FORM element</h4>
+        <p>
+            All the inputs and elements of your form will be embeded witin the form tag.
+        </p>
+        <xmp>
+            <form>
+                Everything inside the form must be placed inside these two tags.
+                <input type="XXX">
+                <select></select>
+                <...></...>
+                and so on...
+            </form>
+        </xmp>
+        <p>That is the crucial bit of your form, nesting all elements within this powerful tag.</p>
+
+        <h3>Time to Practice</h3>
+        <p><strong>In this activity, you'll be required to building the coding behind the following form:</strong></p>
+        <h4>Contact Form</h4>
+        <form action="#">
+            Full name:<br>
+            <input type="text" name="firstname">
+            <br>
+            Email:<br>
+            <input type="email" name="email">
+            <br>
+            Message:<br>
+            <textarea cols="50" rows="10" name="answer"></textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form><br>
+        <p>
+            Our form will contain three fields and one button. We are asking the user for their name,
+            their email and the message they want to send.
+            Hitting the button will send their data to a web server (which you'll learn more later)!
+        </p>
+        <p><strong>Additional Feature:</strong></p>
+        <p>If you want to test your code and see your form being built in real time as you go, use this amazing resource called <a href="https://codepen.io/pen/">Code Pen</a>.</p>
+        <p>
+            This will give you the chance to see if things work and how they do before you send your final submission.
+        </p><br>
+        <p>Have you finished? Write or copy/paste your code in the space below then submit it to us for grading.</p>
+        <p><strong>Happy Coding!</strong></p>
+
+
+        @using (Html.BeginForm("Section1", "UserController", FormMethod.Post, new { @area = "section", @role = "User" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.TextAreaFor(e => e.Section1, new { cols = "50", rows = "10", @placeholder = "Input Code Here..." })
+            <button type="submit">Send</button>
+        }
+
+    </div>
+</div>
+
+

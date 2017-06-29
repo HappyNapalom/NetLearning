@@ -1,0 +1,69 @@
+﻿@model IEnumerable<NetLearning.Models.TeacherModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Section1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.grade1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Section2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.grade2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Section3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.grade3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.overall)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Section1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.grade1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Section2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.grade2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Section3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.grade3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.overall)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
